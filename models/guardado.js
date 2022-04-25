@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       this.belongsTo(models.Usuario, {
         foreignKey: 'usuarioId'
-      });
+      }); 
     }
   }
   Guardado.init({
