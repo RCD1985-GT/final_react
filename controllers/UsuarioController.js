@@ -4,10 +4,10 @@ const bcrypt = require('bcrypt');
 const authConfig = require('../config/auth'); 
 const jwt = require('jsonwebtoken');
 
-const UsuariosController = {};
+const UsuarioController = {};
 
 // Funcion traeUsuarios
-UsuariosController.traeUsuarios = (req, res) => {
+UsuarioController.traeUsuarios = (req, res) => {
     
     Usuario.findAll()
     .then(data => { 
@@ -17,7 +17,7 @@ UsuariosController.traeUsuarios = (req, res) => {
 };
 
 // Funcion registraUsuario...FUNCIONA
-UsuariosController.registraUsuario = async (req, res) => {
+UsuarioController.registraUsuario = async (req, res) => {
     
     //Registrando un usuario
     
@@ -77,7 +77,7 @@ UsuariosController.registraUsuario = async (req, res) => {
 
 
 // Funcion actualizaPerfil
-UsuariosController.actualizaPerfil = async (req, res) => {
+UsuarioController.actualizaPerfil = async (req, res) => {
 
     let datos = req.body;
 
@@ -99,7 +99,7 @@ UsuariosController.actualizaPerfil = async (req, res) => {
 };
 
 // Funcion borraUsuarios
-UsuariosController.borraUsuarios = async (req, res) => {
+UsuarioController.borraUsuarios = async (req, res) => {
 
     try {
 
@@ -118,7 +118,7 @@ UsuariosController.borraUsuarios = async (req, res) => {
 };
 
 // Funcion borraUsuarioPorId
-UsuariosController.borraUsuarioPorId = async (req, res) => {
+UsuarioController.borraUsuarioPorId = async (req, res) => {
 
     let id = req.params.id;
 
@@ -140,7 +140,7 @@ UsuariosController.borraUsuarioPorId = async (req, res) => {
 };
 
 // Funcion loginUsuario....FUNCIONA
-UsuariosController.loginUsuario = (req, res) => {
+UsuarioController.loginUsuario = (req, res) => {
 
     let correo = req.body.email;
     let password = req.body.password;

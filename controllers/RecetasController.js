@@ -17,7 +17,7 @@ RecetasController.registraReceta = (req, res) => {
     
     
    
-    Pelicula.findAll({
+    Receta.findAll({
         where: { titulo: titulo }
     }).then(recetaRepetida => {
         if (recetaRepetida == 0) {
@@ -58,4 +58,4 @@ RecetasController.traeRecetasTipo = (req, res) => {
 
 
 
-module.exports = PeliculasController;
+module.exports = RecetasController;

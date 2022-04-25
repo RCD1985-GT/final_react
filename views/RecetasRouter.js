@@ -17,8 +17,8 @@ router.post('/registrarReceta', auth, RecetasController.registraReceta); // MIRA
 router.get('/', RecetasController.traeRecetas);
 //http://localhost:3300/peliculas
 
-//Leer peliculas por genero...FUNCIONA 
-router.get('/:genero', PeliculasController.traePeliculasGenero); // CAMBIAT EL GENERO POR TIPO
+//Leer recetas por tipo...FUNCIONA 
+router.get('/:tipo', RecetasController.traeRecetasTipo); // CAMBIAT EL GENERO POR TIPO
 //http://localhost:3300/peliculas/:genero
 
 
