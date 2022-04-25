@@ -7,27 +7,27 @@ const UsuariosController = require('../controllers/UsuariosController'); //
 
 
 //Leer todos los usuarios  FUNCIONA 
-router.get('/', UsuariosController.traeUsuarios); 
+router.get('/', UsuariosController.traeUsuarios); // MIRAR AUTH
 //http://localhost:3300/usuarios
 
 //Registrar un usuario...FUNCIONA 
-router.post('/registro', UsuariosController.registraUsuario);
+router.post('/registro', UsuariosController.registraUsuario); // MIRAR AUTH
 //http://localhost:3300/usuarios/registro
 
 //Actualiza un perfil
-router.put('/actualizar', auth, UsuariosController.actualizaPerfil); 
+router.put('/actualizar', UsuariosController.actualizaPerfil); // MIRAR AUTH
 //http://localhost:3300/usuarios/actualizar
 
 //Borrar usuarios
-router.delete('/borrar', auth, UsuariosController.borraUsuarios);
+router.delete('/borrar', UsuariosController.borraUsuarios); // MIRAR AUTH
 //http://localhost:3300/usuarios/borrar
 
 //Borrar usuarios por id
-router.delete('/:id', auth, UsuariosController.borraUsuarioPorId); 
+router.delete('/:id', UsuariosController.borraUsuarioPorId); // MIRAR AUTH
 //http://localhost:3300/usuarios/id
 
 //Login...FUNCIONA 
-router.post('/login', UsuariosController.loginUsuario);
+router.post('/login', UsuariosController.loginUsuario); // MIRAR AUTH
 //https://localhost:3300/usuarios/login
 
 
