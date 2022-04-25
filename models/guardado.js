@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Guardado.init({
-    recetaId: DataTypes.STRING,
-    usuarioId: DataTypes.STRING
+    recetaId: DataTypes.INTEGER,
+    usuarioId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Guardado',
