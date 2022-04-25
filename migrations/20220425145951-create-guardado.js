@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       recetaId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       usuarioId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
