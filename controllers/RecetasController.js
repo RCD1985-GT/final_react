@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-const { Pelicula } = require('../models/index'); // CAMBIAR
+const { Receta } = require('../models/index'); 
 const { Op } = require("sequelize");
 const { compareSync } = require("bcrypt");
 
