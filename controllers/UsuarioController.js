@@ -142,11 +142,11 @@ UsuarioController.borraUsuarioPorId = async (req, res) => {
 // Funcion loginUsuario....FUNCIONA
 UsuarioController.loginUsuario = (req, res) => {
 
-    let email = req.body.email;
+    let correo = req.body.email;
     let password = req.body.password;
 
     Usuario.findOne({
-        where : {email : email}
+        where : {email : correo}
     }).then(Usuario => {
         if(!Usuario){
             res.send("Usuario o contraseña inválido");

@@ -27,7 +27,7 @@ RecetasController.registraReceta = (req, res) => {
                 tipo: tipo,
                 poster: poster,
                 ingredientes: ingredientes,
-                preparacion: preparacion,
+                preparacion: preparacion
 
                 
             }).then(receta => {
@@ -46,15 +46,16 @@ RecetasController.registraReceta = (req, res) => {
 
 //Funcion trae Recetas
 RecetasController.traeRecetas = (req, res) => { 
-    Receta.findAll().then((Recetas) => res.json(Recetas));
+    Receta.findAll().then((Recetas) => res.json(Recetas)).catch(error => {
+        res.send(error)
+    });
 };
 
-// //Funcion trae Recetas por tipo
+//Funcion trae Recetas por tipo
 RecetasController.traeRecetasTipo = (req, res) => { 
-    Receta.findAll({ where: {tipo : req.params.tipo}}).then((Recetas) => res.json(Recetas));
+    Receta.findAll({ where: {tipo : req.params.tipo}}).then((Recetas) => res.json(Recetas)).catch(error => {
+        res.send(error)
+    });
 };
-
-
-
 
 module.exports = RecetasController;

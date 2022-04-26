@@ -1,6 +1,6 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) { // VERIFICAR ESTA LINEA
     await queryInterface.createTable('Guardados', {
       id: {
         allowNull: false,
@@ -9,10 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       recetaId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+        model: 'Recetas',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
       },
       usuarioId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+        model: 'Usuarios',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
