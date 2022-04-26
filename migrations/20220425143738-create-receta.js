@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Recetas', {
@@ -17,9 +18,7 @@ module.exports = {
       poster: {
         type: Sequelize.STRING
       },
-      tiempo: {
-        type: Sequelize.TIME
-      },
+      
       ingredientes: {
         type: Sequelize.STRING
       },

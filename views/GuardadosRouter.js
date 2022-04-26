@@ -4,7 +4,7 @@ const auth = require("../middlewares/auth");
 const GuardadosController = require('../controllers/GuardadosController');
 
 // Nuevo guardado
-router.post('/nuevoGuardado', GuardadosController.nuevoGuardado);
+router.post('/nuevo', GuardadosController.nuevoGuardado);
 //http://localhost:3300/guardados/nuevoGuardado
 
 

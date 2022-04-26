@@ -6,12 +6,11 @@ const { compareSync } = require("bcrypt");
 
 const RecetasController = {};
 
-// Funcion registra receta..FUNCIONA
+// Funcion registra receta
 RecetasController.registraReceta = (req, res) => {
     let titulo = req.body.titulo;
     let tipo = req.body.tipo;
     let poster = req.param.poster; 
-    let tiempo = req.param.tiempo; 
     let ingredientes = req.param.ingredientes; 
     let preparacion = req.param.ingredientes; 
     
@@ -26,7 +25,6 @@ RecetasController.registraReceta = (req, res) => {
                 titulo: titulo,
                 tipo: tipo,
                 poster: poster,
-                tiempo: tiempo,
                 ingredientes: ingredientes,
                 preparacion: preparacion,
 
@@ -50,7 +48,7 @@ RecetasController.traeRecetas = (req, res) => {
     Receta.findAll().then((Recetas) => res.json(Recetas));
 };
 
-// //Funcion trae Peliculas por tipo...FUNCIONA
+// //Funcion trae Recetas por tipo
 RecetasController.traeRecetasTipo = (req, res) => { 
     Receta.findAll({ where: {tipo : req.params.tipo}}).then((Recetas) => res.json(Recetas));
 };

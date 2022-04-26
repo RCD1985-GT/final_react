@@ -1,5 +1,5 @@
 
-const { Pedido } = require('../models/index'); // ¿PORQUE LLAMA A MODELS/INDEX.JS? // CAMBIAR
+const { Guardado } = require('../models/index'); // ¿PORQUE LLAMA A MODELS/INDEX.JS? // CAMBIAR
 
 
 const GuardadosController = {};

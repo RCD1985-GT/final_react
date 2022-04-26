@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING,
     tipo: DataTypes.STRING,
     poster: DataTypes.STRING,
-    tiempo: DataTypes.TIME,
     ingredientes: DataTypes.STRING,
     preparacion: DataTypes.STRING
   }, {
