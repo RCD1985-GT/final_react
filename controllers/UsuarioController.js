@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 const UsuarioController = {};
 
 // Funcion traeUsuarios
-UsuarioController.traeUsuarios = (req, res) => {
+UsuarioController.
+traeUsuarios = (req, res) => {
     
     Usuario.findAll()
     .then(data => { 
