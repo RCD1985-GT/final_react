@@ -59,10 +59,9 @@ UsuarioController.registraUsuario = async (req, res) => {
                     nombre: nombre,
                     apellido: apellido,
                     email: email,
-                    edad: edad,
                     password: password,
                 }).then(usuario => {
-                    res.send(`${usuario.nombre}, bienveni@ a Movie World`);
+                    res.send(`${usuario.nombre}, bienveni@ a final`);
                 })
                 .catch((error) => {
                     res.send(error);
@@ -143,11 +142,11 @@ UsuarioController.borraUsuarioPorId = async (req, res) => {
 // Funcion loginUsuario....FUNCIONA
 UsuarioController.loginUsuario = (req, res) => {
 
-    let correo = req.body.email;
+    let email = req.body.email;
     let password = req.body.password;
 
     Usuario.findOne({
-        where : {email : correo}
+        where : {email : email}
     }).then(Usuario => {
         if(!Usuario){
             res.send("Usuario o contraseña inválido");

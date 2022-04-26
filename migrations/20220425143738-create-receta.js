@@ -18,7 +18,6 @@ module.exports = {
       poster: {
         type: Sequelize.STRING
       },
-      
       ingredientes: {
         type: Sequelize.STRING
       },

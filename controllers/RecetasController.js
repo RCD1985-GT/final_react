@@ -8,11 +8,12 @@ const RecetasController = {};
 
 // Funcion registra receta
 RecetasController.registraReceta = (req, res) => {
+
     let titulo = req.body.titulo;
     let tipo = req.body.tipo;
     let poster = req.param.poster; 
     let ingredientes = req.param.ingredientes; 
-    let preparacion = req.param.ingredientes; 
+    let preparacion = req.param.preparacion; 
     
     
    

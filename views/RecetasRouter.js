@@ -10,15 +10,15 @@ const RecetasController = require('../controllers/RecetasController');
 
 
 //Registro de una nueva receta 
-router.post('/registrar', RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
-//http://localhost:3300/recetas/registrarReceta
+router.post('/registrar', auth, RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
+//http://localhost:3300/recetas/registrar
 
 //Leer todas las recetas 
 router.get('/', RecetasController.traeRecetas);
 //http://localhost:3300/recetas
 
 //Leer recetas por tipo 
-router.get('/:tipo', RecetasController.traeRecetasTipo); // CAMBIAT EL GENERO POR TIPO
+router.get('/:tipo', RecetasController.traeRecetasTipo);
 //http://localhost:3300/recetas/:tipo
 
 
