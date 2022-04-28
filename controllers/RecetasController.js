@@ -6,34 +6,30 @@ const { compareSync } = require("bcrypt");
 
 const RecetasController = {};
 
-// Funcion registra receta....NO
+// Funcion registra receta
 RecetasController.registraReceta = (req, res) => {
 
     let titulo = req.body.titulo;
     let tipo = req.body.tipo;
-    let poster = req.param.poster;
-    let ingredientes = req.param.ingredientes;
-    let preparacion = req.param.preparacion;
+    let poster = req.body.poster;
+    let ingredientes = req.body.ingredientes;
+    let preparacion = req.body.preparacion;
 
-    // Receta.save()
-
-    Receta.save()({ // ESTO ERA UN FINDALL
+    //Guardamos en sequelize la receta
+    Receta.findAll({
         where: { titulo: titulo }
     }).then(recetaRepetida => {
         if (recetaRepetida == 0) {
 
             Receta.create({
-
                 titulo: titulo,
                 tipo: tipo,
                 poster: poster,
                 ingredientes: ingredientes,
-                preparacion: preparacion
-
+                preparacion: preparacion,
 
             }).then(receta => {
                 res.send(`${receta.titulo} ha sido registrada`)
-
             }).catch((error) => {
                 res.send(error);
             });

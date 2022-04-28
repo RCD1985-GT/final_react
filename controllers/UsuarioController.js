@@ -1,78 +1,54 @@
-const { Usuario } = require('../models/index');  
+const { Usuario } = require('../models/index');
 const { Op } = require("sequelize");
 const bcrypt = require('bcrypt');
-const authConfig = require('../config/auth'); 
+const authConfig = require('../config/auth');
 const jwt = require('jsonwebtoken');
 
 const UsuarioController = {};
 
 // Funcion traeUsuarios
 UsuarioController.
-traeUsuarios = (req, res) => {
-    
-    Usuario.findAll()
-    .then(data => { 
-        res.send(data) 
-    });
+    traeUsuarios = (req, res) => {
 
-};
+        Usuario.findAll()
+            .then(data => {
+                res.send(data)
+            });
+
+    };
 
 // Funcion registraUsuario...FUNCIONA
 UsuarioController.registraUsuario = async (req, res) => {
-    
-    //Registrando un usuario
-    
-        let nombre = req.body.nombre;
-        let apellido = req.body.apellido;
-        let email = req.body.email;
-        let edad = req.body.edad;
-        let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds)); 
-        
-        console.log("este es el password", password);
-        //Comprobación de errores.....
-        
-        //Guardamos en sequelize el usuario
 
-        Usuario.findAll({
-            where : {
+    let nombre = req.body.nombre;
+    let apellido = req.body.apellido;
+    let email = req.body.email;
+    let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
 
-                [Op.or] : [
-                    {
-                        email : {
-                            [Op.like] : email
-                        }
-                    },
-                    /*{
-                        nickname : {
-                            [Op.like] : nickname
-                        }
-                    }*/
-                ]
+    //Guardamos en sequelize el usuario
+    Usuario.findAll({
+        where: { email: email }
+    }).then(datosRepetidos => {
+        if (datosRepetidos == 0) {
 
-            }
-
-        }).then(datosRepetidos => {
-
-            if(datosRepetidos == 0){
-
-                    Usuario.create({
-                    nombre: nombre,
-                    apellido: apellido,
-                    email: email,
-                    password: password,
-                }).then(usuario => {
-                    res.send(`${usuario.nombre}, bienveni@ a final`);
-                })
+            Usuario.create({
+                nombre: nombre,
+                apellido: apellido,
+                email: email,
+                password: password,
+            }).then(usuario => {
+                res.send(`${usuario.nombre}, bienveni@ a final`);
+            })
                 .catch((error) => {
                     res.send(error);
                 });
 
-            }else {
-                res.send("El usuario con ese e-mail ya existe en nuestra base de datos");
-            }
-        }).catch(error => {
-            res.send(error)
-        });
+        } else {
+            res.send("El usuario con ese e-mail ya existe en nuestra base de datos");
+        }
+    }).catch(error => {
+        res.send(error)
+    });
 };
 
 
@@ -86,11 +62,11 @@ UsuarioController.actualizaPerfil = async (req, res) => {
     try {
 
         Usuario.update(datos, {
-            where: {id : id}
+            where: { id: id }
         })
-        .then(actualizado => {
-            res.send(actualizado);
-        });
+            .then(actualizado => {
+                res.send(actualizado);
+            });
 
     } catch (error) {
         res.send(error);
@@ -104,12 +80,12 @@ UsuarioController.borraUsuarios = async (req, res) => {
     try {
 
         Usuario.destroy({
-            where : {},
-            truncate : false
+            where: {},
+            truncate: false
         })
-        .then(usuariosEliminados => {
-            res.send(`Se han eliminado ${usuariosEliminados} usuarios`);
-        })
+            .then(usuariosEliminados => {
+                res.send(`Se han eliminado ${usuariosEliminados} usuarios`);
+            })
 
     } catch (error) {
         res.send(error);
@@ -125,13 +101,13 @@ UsuarioController.borraUsuarioPorId = async (req, res) => {
     try {
 
         Usuario.destroy({
-            where : { id : id },
-            truncate : false
+            where: { id: id },
+            truncate: false
         })
-        .then(usuarioEliminado => {
-            console.log(usuarioEliminado);
-            res.send(`El usuario con la id ${id} ha sido eliminado`);
-        })
+            .then(usuarioEliminado => {
+                console.log(usuarioEliminado);
+                res.send(`El usuario con la id ${id} ha sido eliminado`);
+            })
 
     } catch (error) {
         res.send(error);
@@ -146,11 +122,11 @@ UsuarioController.loginUsuario = (req, res) => {
     let password = req.body.password;
 
     Usuario.findOne({
-        where : {email : correo}
+        where: { email: correo }
     }).then(Usuario => {
-        if(!Usuario){
+        if (!Usuario) {
             res.send("Usuario o contraseña inválido");
-        }else {
+        } else {
             //el usuario existe, por lo tanto, vamos a comprobar
             //si el password es correcto
 
