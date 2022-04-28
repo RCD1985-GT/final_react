@@ -10,7 +10,7 @@ const RecetasController = require('../controllers/RecetasController');
 
 
 //Registro de una nueva receta 
-router.post('/registrar', auth, RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
+router.post('/registrar', RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
 //http://localhost:3300/recetas/registrar
 
 //Leer todas las recetas 
