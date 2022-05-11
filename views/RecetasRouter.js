@@ -15,7 +15,7 @@ router.get('/', RecetasController.traeRecetas);
 //http://localhost:3300/recetas
 
 //Leer recetas por tipo 
-router.get('/:tipo', auth, RecetasController.traeRecetasTipo);
+router.get('/:tipo', RecetasController.traeRecetasTipo);
 //http://localhost:3300/recetas/:tipo
 
 
