@@ -30,6 +30,23 @@ GuardadosController.nuevoGuardado = (req,res) => {
     }))
 }
 
+// Funcion que muestra receta por id de usuario
+GuardadosController.traeGuardados= (req, res) => {
+
+    try {
+        Guardado.findAll({
+            where: {
+                usuarioId: req.params.id
+            }
+        }).then(datos => {
+            res.send(datos);
+        }
+        );
+    } catch (error) {
+        res.send(error);
+    }
+}
+
 
 
 // Funcion totalGuardados....FUNCIONA

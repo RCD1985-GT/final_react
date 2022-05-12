@@ -9,6 +9,8 @@ const RecetasController = {};
 // Funcion registra receta
 RecetasController.registraReceta = (req, res) => {
 
+    let id = req.params.id;
+
     let titulo = req.body.titulo;
     let tipo = req.body.tipo;
     let poster = req.body.poster;
@@ -22,6 +24,7 @@ RecetasController.registraReceta = (req, res) => {
         if (recetaRepetida == 0) {
 
             Receta.create({
+                
                 titulo: titulo,
                 tipo: tipo,
                 poster: poster,

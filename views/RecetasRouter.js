@@ -7,8 +7,8 @@ const isAdmin = require("../middlewares/isAdmin");
 const RecetasController = require('../controllers/RecetasController');
 
 //Registro de una nueva receta 
-router.post('/registrar', auth, isAdmin, RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
-//http://localhost:3300/recetas/registrar
+router.post('/:id', auth, isAdmin, RecetasController.registraReceta); // MIRAR AUTH Y ISADMIN
+//http://localhost:3300/registrar
 
 //Leer todas las recetas 
 router.get('/', RecetasController.traeRecetas);

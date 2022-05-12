@@ -8,11 +8,11 @@ module.exports = {
     await queryInterface.bulkInsert('usuario', [ // QUITO BCRYPT PARA COMPROBAR QUE FUNCIONA "password":bcrypt.hashSync("1234", Number.parseInt(authConfig.rounds))
     {
       "id": 1,
-      "nombre": "Rodrigo",
-      "apellido": "Campos",
-      "email": "rodrigo@gmail.com",
+      "nombre": "Marta",
+      "apellido": "Santandreu",
+      "email": "marta@gmail.com",
       "password": "1234",
-      "rol": "1",
+      "rol": "0",
       "createdAt": "2021/08/30",
       "updatedAt": "2021/11/12"
     }, {
