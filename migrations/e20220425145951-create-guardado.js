@@ -8,26 +8,46 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      recetaId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-        model: 'Receta',
-        key: 'id'
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
-      },
       usuarioId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-        model: 'Usuario',
-        key: 'id'
+          model: 'Usuario',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
+      recetaId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Receta',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
+      titulo: {
+        type: Sequelize.STRING
+      },
+
+      tipo: {
+        type: Sequelize.STRING
+      },
+
+      poster: {
+        type: Sequelize.STRING
+      },
+
+      ingredientes: {
+        type: Sequelize.STRING
+      },
+
+      preparacion: {
+        type: Sequelize.STRING
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

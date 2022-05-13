@@ -16,8 +16,12 @@ GuardadosController.nuevoGuardado = (req,res) => {
     Guardado.create({
         recetaId: body.recetaId,
         usuarioId: body.usuarioId,
-        
-    })
+        titulo: body.titulo,
+        tipo: body.titulo,
+        poster: body.poster,
+        ingredientes: body.ingredientes,
+        preparacion: body.preparacion
+         })
     .then(guardado => {
         if(guardado){
             res.send(guardado)
