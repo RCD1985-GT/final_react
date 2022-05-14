@@ -5,7 +5,7 @@ const { Guardado } = require('../models/index'); // ¿PORQUE LLAMA A MODELS/INDE
 const GuardadosController = {};
 
 
-// Funcion nuevoGuardado...
+// Funcion nuevoGuardado.
 
 GuardadosController.nuevoGuardado = (req,res) => {
     
