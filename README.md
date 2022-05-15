@@ -63,6 +63,9 @@ CRUD Usuario
 -encriptación del password
 -proceso de autenticacion mediante jsonwebtoken
 
+#Deploy:
+Puedes ver el front de la app en:
+https://rcd-bbdd-proyecto-final.herokuapp.com/
 
 Autores ✒️
 Rodrigo Campos
