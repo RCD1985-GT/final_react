@@ -15,7 +15,7 @@ router.post('/registro', UsuarioController.registraUsuario);
 //http://localhost:3300/usuarios/registro
 
 //Actualiza un perfil
-router.put('/actualizar', UsuarioController.actualizaPerfil); 
+router.put('/actualizar', auth, UsuarioController.actualizaPerfil);
 //http://localhost:3300/usuarios/actualizar
 
 //Borrar usuarios
