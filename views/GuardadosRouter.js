@@ -9,7 +9,11 @@ router.post('/nuevo', auth, GuardadosController.nuevoGuardado);
 
 // Traer guardados por id
 router.get('/usuario/:id', auth, GuardadosController.traeGuardados);
-//http://localhost:3300/usuario/13
+//http://localhost:3300/guardados/usuario/13
+
+// Elimina guardado por id
+router.delete("/:id",auth, GuardadosController.eliminaRecetaId);
+//http://localhost:3300/guardados/id
 
 
 module.exports = router;

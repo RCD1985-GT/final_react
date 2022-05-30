@@ -60,12 +60,13 @@ GuardadosController.totalGuardados = (req, res) => {
 };
 
 // Funcion elimina receta guardada
-GuardadosController.eliminaReceta =(req,res) => {
-    let id = req.params.id;
+GuardadosController.eliminaRecetaId =(req,res) => {
+
+    // let id = req.params.id;
 
     try{
         Receta.destroy({
-            where : { id : id},
+            where : { id : req.params.id},
             truncate : false
         })
       
@@ -78,11 +79,6 @@ GuardadosController.eliminaReceta =(req,res) => {
         send.error(error);
     }
 };
-
-
-
-
-
 
 
 

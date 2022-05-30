@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Guardado, {
         foreignKey: 'recetaId'
       });
+      this.belongsTo(models.Receta, {
+        foreignKey: 'recetaId'
+      });
     }
   }
   Receta.init({
