@@ -5,6 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert('receta', [ // QUITO BCRYPT PARA COMPROBAR QUE FUNCIONA "password":bcrypt.hashSync("1234", Number.parseInt(authConfig.rounds))
     {
       "id": 1,
+      "usuarioId": 11,
       "titulo": "Small Soldiers",
       "tipo": "Ensalada",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -14,6 +15,7 @@ module.exports = {
       "updatedAt": "2021/10/29"
     }, {
       "id": 2,
+      "usuarioId": 11,
       "titulo": "As Far As My Feet Will Carry Me (So weit die Füße tragen)",
       "tipo": "Asado",
       "poster": "https://naver.com/sollicitudin/mi/sit/amet.json?condimentum=bibendum&id=imperdiet&luctus=nullam&nec=orci&molestie=pede&sed=venenatis&justo=non&pellentesque=sodales",
@@ -23,6 +25,7 @@ module.exports = {
       "updatedAt": "2022/03/03"
     }, {
       "id": 3,
+      "usuarioId": 11,
       "titulo": "Salsa",
       "tipo": "Comedy|Horror",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -32,6 +35,7 @@ module.exports = {
       "updatedAt": "2021/12/20"
     }, {
       "id": 4,
+      "usuarioId": 11,
       "titulo": "Very Potter Musical, A",
       "tipo": "Crujiente",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -42,6 +46,7 @@ module.exports = {
       "updatedAt": "2022/01/31"
     }, {
       "id": 5,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Crudo",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -52,6 +57,7 @@ module.exports = {
       "updatedAt": "2021/05/28"
     }, {
       "id": 6,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Vegano",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -63,6 +69,7 @@ module.exports = {
     },
     {
       "id": 7,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Picante",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -73,6 +80,7 @@ module.exports = {
       "updatedAt": "2021/05/28"
     }, {
       "id": 8,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Especiado",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -84,6 +92,7 @@ module.exports = {
     },
     {
       "id": 9,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Pescado",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -94,6 +103,7 @@ module.exports = {
       "updatedAt": "2021/05/28"
     }, {
       "id": 10,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Carne",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -105,6 +115,7 @@ module.exports = {
     },
     {
       "id": 11,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Plancha",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -115,6 +126,7 @@ module.exports = {
       "updatedAt": "2021/05/28"
     }, {
       "id": 12,
+      "usuarioId": 11,
       "titulo": "I Will Follow You Into the Dark",
       "tipo": "Cocido",
       "poster": "https://psu.edu/ut/massa/quis/augue/luctus/tincidunt.json?est=nisl&congue=venenatis&elementum=lacinia&in=aenean&hac=sit",
@@ -124,12 +136,6 @@ module.exports = {
       "createdAt": "2022/03/29",
       "updatedAt": "2021/05/28"
     }
-
-
-
-
-
-
 
     ], {});
   },

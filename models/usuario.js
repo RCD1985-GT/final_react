@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Guardado, {
         foreignKey: 'usuarioId'
       });
-      this.hasOne(models.Usuario, {
+      this.hasOne(models.Receta, {
         foreignKey: 'usuarioId'
       });
     }

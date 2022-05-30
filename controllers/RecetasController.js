@@ -10,7 +10,7 @@ const RecetasController = {};
 RecetasController.registraReceta = (req, res) => {
 
     let id = req.params.id;
-
+    let usuarioId = req.body.usuarioId;
     let titulo = req.body.titulo;
     let tipo = req.body.tipo;
     let poster = req.body.poster;
@@ -24,7 +24,7 @@ RecetasController.registraReceta = (req, res) => {
         if (recetaRepetida == 0) {
 
             Receta.create({
-                
+                usuarioId: usuarioId,
                 titulo: titulo,
                 tipo: tipo,
                 poster: poster,

@@ -11,8 +11,8 @@ router.post('/nuevo', auth, GuardadosController.nuevoGuardado);
 router.get('/usuario/:id', auth, GuardadosController.traeGuardados);
 //http://localhost:3300/guardados/usuario/13
 
-// Elimina guardado por id
-router.delete("/:id",auth, GuardadosController.eliminaRecetaId);
+// Elimina receta guardada por id
+router.delete("/:id", auth, GuardadosController.eliminaRecetaId);
 //http://localhost:3300/guardados/id
 
 

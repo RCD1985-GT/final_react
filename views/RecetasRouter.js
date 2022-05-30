@@ -20,5 +20,16 @@ router.get('/:tipo', RecetasController.traeRecetasTipo);
 
 
 
+//Modificar receta
+// router.put('/modificar', auth, RecetasController.modificarReceta); // CAMBIAR
+//http://localhost:3300/modificar // CAMBIAR
+
+
+//Eliminar receta
+// router.delete('/eliminar', auth, RecetasController.eliminarReceta); // CAMBIAR
+//http://localhost:3300/eliminar // CAMBIAR
+
+
+
 
 module.exports = router;

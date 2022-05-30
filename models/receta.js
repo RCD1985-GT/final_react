@@ -14,12 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Guardado, {
         foreignKey: 'recetaId'
       });
-      this.belongsTo(models.Receta, {
-        foreignKey: 'recetaId'
-      });
-    }
+     }
   }
   Receta.init({
+    usuarioId: DataTypes.INTEGER,
     titulo: DataTypes.STRING,
     tipo: DataTypes.STRING,
     poster: DataTypes.STRING,
