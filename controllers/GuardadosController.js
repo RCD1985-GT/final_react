@@ -59,26 +59,26 @@ GuardadosController.totalGuardados = (req, res) => {
     });
 };
 
-// Funcion elimina receta guardada
-GuardadosController.eliminaRecetaId =(req,res) => {
+// // Funcion elimina receta guardada
+// GuardadosController.eliminaRecetaId =(req,res) => {
 
-    let id = req.params.id;
+//     let id = req.params.id;
 
-    try{
-        Guardado.destroy({
-            where : { id : id},
-            truncate : false
-        })
+//     try{
+//         Guardado.destroy({
+//             where : { id : id},
+//             truncate : false
+//         })
       
-        .then(recetaEliminada =>{
-            console.log(recetaEliminada);
-            res.send(`La receta con id ${id} ha sido eliminada`);
-        })
-    }
-    catch(error){
-        send.error(error);
-    }
-};
+//         .then(recetaEliminada =>{
+//             console.log(recetaEliminada);
+//             res.send(`La receta con id ${id} ha sido eliminada`);
+//         })
+//     }
+//     catch(error){
+//         send.error(error);
+//     }
+// };
 
 
 

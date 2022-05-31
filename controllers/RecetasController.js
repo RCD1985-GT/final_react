@@ -59,4 +59,27 @@ RecetasController.traeRecetasTipo = (req, res) => {
     });
 };
 
+
+// Funcion que elimina receta 
+
+RecetasController.eliminaRecetaId =(req,res) => {
+
+    let id = req.params.id;
+
+    try{
+        Receta.destroy({
+            where : { id : id},
+            truncate : false
+        })
+      
+        .then(recetaEliminada =>{
+            console.log(recetaEliminada);
+            res.send(`La receta con id ${id} ha sido eliminada`);
+        })
+    }
+    catch(error){
+        send.error(error);
+    }
+};
+
 module.exports = RecetasController;

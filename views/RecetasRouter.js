@@ -26,8 +26,8 @@ router.get('/:tipo', RecetasController.traeRecetasTipo);
 
 
 //Eliminar receta
-// router.delete('/eliminar', auth, RecetasController.eliminarReceta); // CAMBIAR
-//http://localhost:3300/eliminar // CAMBIAR
+router.delete('/eliminar/:id', auth, RecetasController.eliminaRecetaId);
+//http://localhost:3300/eliminar/id // CAMBIAR
 
 
 
